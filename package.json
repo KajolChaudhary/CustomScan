@@ -41,7 +41,9 @@
   },
   "homepage": "https://github.com/tjwoon/csZBar#readme",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "npm-git-install": "^0.3.0"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "test"
