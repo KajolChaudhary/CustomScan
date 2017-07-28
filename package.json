@@ -35,9 +35,15 @@
     }
   ],
   "author": "TJ Woon <tj@cloudsky.org>",
-  "license": "Apache 2.0",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/tjwoon/csZBar/issues"
   },
-  "homepage": "https://github.com/tjwoon/csZBar#readme"
+  "homepage": "https://github.com/tjwoon/csZBar#readme",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  }
 }
