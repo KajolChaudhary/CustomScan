@@ -49,10 +49,10 @@ public class ZBar extends CordovaPlugin {
     throws JSONException
     {
         if(action.equals("scan")) {
-            if(isInProgress) {
-                callbackContext.error("A scan is already in progress!");
-            } else {
-                isInProgress = true;
+           // if(isInProgress) {
+             //   callbackContext.error("A scan is already in progress!");
+            //} else {
+              //  isInProgress = true;
                 scanCallbackContext = callbackContext;
                 JSONObject params = args.optJSONObject(0);
 
@@ -60,7 +60,7 @@ public class ZBar extends CordovaPlugin {
                 Intent scanIntent = new Intent(appCtx, ZBarScannerActivity.class);
                 scanIntent.putExtra(ZBarScannerActivity.EXTRA_PARAMS, params.toString());
                 cordova.startActivityForResult(this, scanIntent, SCAN_CODE);
-            }
+            //}
             return true;
         } else if(action.equals("login")){
 			 loginCallbackContext = callbackContext;

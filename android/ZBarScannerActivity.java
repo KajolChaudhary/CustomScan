@@ -175,8 +175,8 @@ implements SurfaceHolder.Callback {
 			btnMyMagazines.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					if(ZBar.loginCallbackContext!=null){
-						ZBar.loginCallbackContext.success("");
+					if(ZBar.myMagazineContext!=null){
+						ZBar.myMagazineContext.success("");
 					}
 					finish();
 				}
@@ -198,27 +198,28 @@ implements SurfaceHolder.Callback {
 			});
 
 			if(isLoggedIn){
-				btnLogin.setVisibility(View.Gone);
+				btnLogin.setVisibility(View.GONE);
 				btnMyMagazines.setVisibility(View.VISIBLE);
 			}else{
 				btnLogin.setVisibility(View.VISIBLE);
-				btnMyMagazines.setVisibility(View.Gone);
+				btnMyMagazines.setVisibility(View.GONE);
 			}
 			edtSearch= (EditText) findViewById(getResourceId("id/edtSearch"));
 			RelativeLayout rlImgSearch= (RelativeLayout) findViewById(getResourceId("id/rlImgSearch"));
-			btnLogin.setOnClickListener(new View.OnClickListener() {
+			rlImgSearch.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
 					if(ZBar.searchContext!=null){
 						String searchtxt = edtSearch.getText().toString().trim();
 						if(searchtxt.length()>0){
 							ZBar.searchContext.success(searchtxt);
+							finish();
 						}else{
-							ZBar.searchContext.error("Please enter magazine name");
-							//Toast.makeText(ZBarScannerActivity.this, "Please enter magazine name", Toast.LENGTH_LONG).show();
+							//ZBar.searchContext.error("Please enter magazine name");
+							Toast.makeText(ZBarScannerActivity.this, "Please enter magazine name", Toast.LENGTH_LONG).show();
 						}
 					}
-					finish();
+					
 				}
 			});
 			
